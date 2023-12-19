@@ -1,32 +1,30 @@
 //firebase configuration
-// import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+import { initializeApp } from 'firebase/app';
 
-// const firebaseConfig = {
-//   apiKey: 'AIzaSyAKYrF2YoqGKSaSU407C9X91DqaZMAg4q4',
-//   authDomain: 'filmoteka-urraccon.firebase.com',
-//   projectId: 'filmoteka-urraccon',
-//   storageBucket: 'filmoteka-urraccon.appspot.com',
-//   messagingSenderId: '712511464775',
-//   appId: '1:712511464775:web:f28be5eb7fc38469c69862',
-// };
+const firebaseConfig = {
+  apiKey: 'AIzaSyAKYrF2YoqGKSaSU407C9X91DqaZMAg4q4',
+  authDomain: 'filmoteka-urraccon.firebaseapp.com',
+  projectId: 'filmoteka-urraccon',
+  storageBucket: 'filmoteka-urraccon.appspot.com',
+  messagingSenderId: '712511464775',
+  appId: '1:712511464775:web:f28be5eb7fc38469c69862',
+};
 
-// const app = initializeApp(firebaseConfig);
-
-// export { app };
+const app = initializeApp(firebaseConfig);
 //--------------------------------------------------------------
 
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
-import { app } from './firebase_config.js';
+// import { app } from './firebase_config.js';
 // import { watchedMocieList, queuedMovieList } from '';
 // import { DeviceUUID } from 'device-uuid/lib/device-uuid.js';
 // import { v4 as uuid } from 'uuid';
 // import { biri } from 'biri';
 
 const db = getFirestore(app);
-console.log(app);
-console.log(db);
+// console.log(app);
+// console.log(db);
 // const biri = require('biri');
-// const deviceID = 'your-device-ID';
+const deviceID = 'your-device-ID';
 // const x = async function y() {
 //   new Promise((resolve) => {
 //     setTimeout(resolve(z),1000);
@@ -37,16 +35,28 @@ console.log(db);
 //   const deviceID = await biri();
 // }
 
-const itemPath = doc(db, 'watched_and_queued_movie_list', 'your-device-ID');
+const itemPath = doc(db, 'watched_and_queued_movie_list', `${deviceID}`);
+// test
+async function getData() {
+  const docSnap = await getDoc(docRef);
+  if (docSnap.exists()) {
+    console.log('Document data:', docSnap.data());
+  } else {
+    // docSnap.data() will be undefined in this case
+    console.log('No such document!');
+  }
+}
+getData();
+//
 // let savedMovies = '[]';
 let watchedQueuedMovies = {
   watchedMovies: [],
   queuedMovies: [],
 };
 
-// console.dir(app);
-// console.dir(db);
-// console.log(deviceID);
+console.dir(app);
+console.dir(db);
+console.log(deviceID);
 
 //download the list of watched and queued movies from the firestore database
 const downloadWatchedQueuedMoviesFromDB = async function getItem() {
