@@ -15,13 +15,8 @@
 // export { app };
 //--------------------------------------------------------------
 
-// import {
-//   getFirestore,
-//   doc,
-//   setDoc,
-//   getDoc,
-// } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
-// import { app } from './firebase_config.js';
+import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore';
+import { app } from './firebase_config.js';
 // import { watchedMocieList, queuedMovieList } from '';
 // import { DeviceUUID } from 'device-uuid/lib/device-uuid.js';
 // import { v4 as uuid } from 'uuid';
