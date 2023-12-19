@@ -67,7 +67,7 @@ const downloadWatchedQueuedMoviesFromDB = async function getItem() {
     itemAccess = await getDoc(itemPath);
     const savedMovies = itemAccess.data();
     console.log(savedMovies);
-    savedMoviesLength = Object.keys(savedMovies).length;
+    const savedMoviesLength = Object.keys(savedMovies).length;
     console.log(savedMoviesLength);
     if (savedMoviesLength === 0) {
       savedMovies.watchedMovies = [];
