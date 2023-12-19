@@ -1,11 +1,11 @@
 {
-  "name": "filmoteka-with-firebase",
+  "name": "filmoteka-testing-firestore",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://urraccon.github.io/filmoteka-with-firebase",
+  "homepage": "https://urraccon.github.io/filmoteka-testing-firestore",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /filmoteka-with-firebase/"
+    "build": "parcel build src/*.html --public-url /filmoteka-testing-firestore/"
   },
   "repository": {
     "type": "git",
