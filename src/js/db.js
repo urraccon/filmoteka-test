@@ -15,7 +15,7 @@
 // export { app };
 //--------------------------------------------------------------
 
-import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore';
+import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 import { app } from './firebase_config.js';
 // import { watchedMocieList, queuedMovieList } from '';
 // import { DeviceUUID } from 'device-uuid/lib/device-uuid.js';
@@ -23,6 +23,8 @@ import { app } from './firebase_config.js';
 // import { biri } from 'biri';
 
 const db = getFirestore(app);
+console.log(app);
+console.log(db);
 // const biri = require('biri');
 const deviceID = 'your-device-ID';
 // const x = async function y() {
@@ -42,8 +44,8 @@ let watchedQueuedMovies = {
   queuedMovies: [],
 };
 
-console.dir(app);
-console.dir(db);
+// console.dir(app);
+// console.dir(db);
 console.log(deviceID);
 
 //download the list of watched and queued movies from the firestore database
