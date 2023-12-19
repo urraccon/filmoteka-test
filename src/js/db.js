@@ -1,21 +1,26 @@
 //firebase configuration
-import { initializeApp } from 'firebase/app';
+// import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyAKYrF2YoqGKSaSU407C9X91DqaZMAg4q4',
-  authDomain: 'filmoteka-urraccon.firebase.com',
-  projectId: 'filmoteka-urraccon',
-  storageBucket: 'filmoteka-urraccon.appspot.com',
-  messagingSenderId: '712511464775',
-  appId: '1:712511464775:web:f28be5eb7fc38469c69862',
-};
+// const firebaseConfig = {
+//   apiKey: 'AIzaSyAKYrF2YoqGKSaSU407C9X91DqaZMAg4q4',
+//   authDomain: 'filmoteka-urraccon.firebase.com',
+//   projectId: 'filmoteka-urraccon',
+//   storageBucket: 'filmoteka-urraccon.appspot.com',
+//   messagingSenderId: '712511464775',
+//   appId: '1:712511464775:web:f28be5eb7fc38469c69862',
+// };
 
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
 
 // export { app };
 //--------------------------------------------------------------
 
-import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore';
+// import {
+//   getFirestore,
+//   doc,
+//   setDoc,
+//   getDoc,
+// } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 // import { app } from './firebase_config.js';
 // import { watchedMocieList, queuedMovieList } from '';
 // import { DeviceUUID } from 'device-uuid/lib/device-uuid.js';
