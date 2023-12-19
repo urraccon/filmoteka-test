@@ -35,7 +35,7 @@ const deviceID = 'your-device-ID';
 //   const deviceID = await biri();
 // }
 
-// const itemPath = doc(db, 'watched_and_queued_movie_list', `${deviceID}`);
+const itemPath = doc(db, 'watched_and_queued_movie_list', `${deviceID}`);
 // // test
 // async function getData() {
 //   const docSnap = await getDoc(itemPath);
@@ -51,6 +51,7 @@ const deviceID = 'your-device-ID';
 
 //the rest of the code
 // let savedMovies = '[]';
+var itemAccess = '';
 let watchedQueuedMovies = {
   watchedMovies: [],
   queuedMovies: [],
@@ -63,8 +64,8 @@ console.log(deviceID);
 //download the list of watched and queued movies from the firestore database
 const downloadWatchedQueuedMoviesFromDB = async function getItem() {
   try {
-    const itemAccess = await getDoc(itemPath);
-    savedMovies = itemAccess.data();
+    itemAccess = await getDoc(itemPath);
+    const savedMovies = itemAccess.data();
     console.log(savedMovies);
     // savedMoviesLength = Object.keys(savedMovies).length;
     // console.log(savedMoviesLength);
