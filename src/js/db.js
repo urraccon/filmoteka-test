@@ -51,7 +51,7 @@ const itemPath = doc(db, 'watched_and_queued_movie_list', `${deviceID}`);
 
 //the rest of the code
 // let savedMovies = '[]';
-var itemAccess = '';
+let itemAccess = '';
 let watchedQueuedMovies = {
   watchedMovies: [],
   queuedMovies: [],
