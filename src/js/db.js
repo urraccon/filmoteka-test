@@ -38,7 +38,7 @@ const deviceID = 'your-device-ID';
 const itemPath = doc(db, 'watched_and_queued_movie_list', `${deviceID}`);
 // test
 async function getData() {
-  const docSnap = await getDoc(docRef);
+  const docSnap = await getDoc(itemPath);
   if (docSnap.exists()) {
     console.log('Document data:', docSnap.data());
   } else {
