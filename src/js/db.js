@@ -59,20 +59,32 @@ let watchedQueuedMovies = {
 
 console.dir(app);
 console.dir(db);
-console.log(deviceID);
+console.log(`Your device ID is: ${deviceID}`);
 
 //download the list of watched and queued movies from the firestore database
 const downloadWatchedQueuedMoviesFromDB = async function getItem() {
   try {
+    // console.log('Hello!');
+    // console.log('Initializing the Firestore database');
+    // console.log('You must log in to access the database');
+    // console.log('You have successfully logged in, urraccon');
+    // console.log('What do you want to store in the database?');
+    // console.log(
+    //   'We found an entry in the database that matches your device ID'
+    // );
+    // console.log(
+    //   'Do you want to access the data from this entry in the database?'
+    // );
+    // console.log(`I open the document with the ID: ${deviceID}`);
     itemAccess = await getDoc(itemPath);
     const savedMovies = itemAccess.data();
-    console.log(savedMovies);
+    // console.log(savedMovies);
     if (savedMovies === undefined) {
       await setDoc(itemPath, watchedQueuedMovies);
       return;
     }
     const savedMoviesLength = Object.keys(savedMovies).length;
-    console.log(savedMoviesLength);
+    // console.log(savedMoviesLength);
     // if (savedMoviesLength === 0) {
     //   savedMovies.watchedMovies = [];
     //   savedMovies.queuedMovies = [];
@@ -80,11 +92,17 @@ const downloadWatchedQueuedMoviesFromDB = async function getItem() {
     watchedQueuedMovies.watchedMovies = savedMovies.watchedMovies;
     watchedQueuedMovies.queuedMovies = savedMovies.queuedMovies;
     // }
+    // console.log(
+    //   `The data stored in the document with the ID ${deviceID} are: `,
+    //   JSON.parse(savedMovies.watchedMovies[0]),
+    //   ' ',
+    //   JSON.parse(savedMovies.queuedMovies[0])
+    // );
     console.log(
-      'The movies added to watched are: ',
-      savedMovies.watchedMovies,
+      'The movies saved to watched are: ',
+      JSON.parse(savedMovies.watchedMovies[0]),
       'and queued are: ',
-      savedMovies.queuedMovies
+      JSON.parse(savedMovies.queuedMovies[0])
     );
     // if (savedMoviesLength === 0) {
     // debugger;
@@ -111,7 +129,7 @@ const uploadWatchedQueuedMoviesToDB = async function setItem(
   try {
     // debugger;
     downloadWatchedQueuedMoviesFromDB();
-    console.log(listType, addMovies);
+    // console.log(listType, addMovies);
     // let addMovies = [];
     // debugger;
     // if (addWatchedMovies === null) {
@@ -137,7 +155,7 @@ const uploadWatchedQueuedMoviesToDB = async function setItem(
     // }
     // const addMovies = addWatchedMovies.concat(addQueuedMovies);
     const addMoviesTextified = JSON.stringify(addMovies);
-    console.log(addMoviesTextified);
+    // console.log(addMoviesTextified);
     // if (addMovieTextified === '[]') {
     //   return;
     // }
@@ -152,9 +170,9 @@ const uploadWatchedQueuedMoviesToDB = async function setItem(
     // debugger;
     await setDoc(itemPath, watchedQueuedMovies);
     console.log(
-      'The list of added watched movies is: ',
+      'The movies added in watched list are: ',
       watchedQueuedMovies.watchedMovies,
-      ' and queued is: ',
+      ' and in queued list are: ',
       watchedQueuedMovies.queuedMovies
     );
   } catch (error) {

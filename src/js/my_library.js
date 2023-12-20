@@ -33,14 +33,14 @@ async function setStoredValues() {
 function takeItem() {
   try {
     const itemData = itemAccess.data();
-    console.log(itemData);
+    // console.log(itemData);
     if (itemData === undefined) {
       downloadWatchedQueuedMoviesFromDB();
       initializeLibrary();
       return;
     }
     const itemDataLength = Object.keys(itemData).length;
-    console.log(itemDataLength);
+    // console.log(itemDataLength);
     if (
       itemDataLength === 0 ||
       itemData.queuedMovies === undefined ||
@@ -58,7 +58,7 @@ function takeItem() {
     const watchedMoviesLength = itemData.watchedMovies.length;
     const watchedMovies = itemData.watchedMovies;
     const queuedMovies = itemData.queuedMovies;
-    console.log(queuedMoviesLength);
+    // console.log(queuedMoviesLength);
     // if (pickListLength === 0) {
     //   watchedList = [];
     //   queueList = [];
@@ -91,9 +91,9 @@ function takeItem() {
 
     initializeLibrary();
     console.log(
-      'You movies saved in watched are:',
+      'I found more movies in the watched movies list: ',
       watchedList,
-      'and queued are: ',
+      'and in the queued movies list: ',
       queueList
     );
   } catch (error) {

@@ -82,7 +82,7 @@ function watchedBtnClick() {
       movie => movie.id === movieArray[pos].id
     );
     watchedList.splice(extractPos, 1);
-    console.log(watchedList);
+    // console.log(watchedList);
     // watchedList.push(movieArray[pos]);
     // watchList;
     // console.log(watchedList);
@@ -204,7 +204,7 @@ function queueBtnClick() {
   });
   //------------------------------------------------------------
   //upload the list of queued movies to the firestore database
-  console.log(queueList);
+  // console.log(queueList);
   uploadWatchedQueuedMoviesToDB('queue', queueList);
   uploadWatchedQueuedMoviesToDB('watched', watchedList);
   //------------------------------------------------------------
@@ -344,7 +344,7 @@ function takeItem() {
       return;
     }
     const itemDataLength = Object.keys(itemData).length;
-    console.log(itemDataLength);
+    // console.log(itemDataLength);
     if (
       itemDataLength === 0 ||
       itemData.queuedMovies === undefined ||
@@ -362,8 +362,8 @@ function takeItem() {
     const watchedMoviesLength = itemData.watchedMovies.length;
     const watchedMovies = itemData.watchedMovies;
     const queuedMovies = itemData.queuedMovies;
-    console.log(watchedMoviesLength);
-    console.log(queuedMoviesLength);
+    // console.log(watchedMoviesLength);
+    // console.log(queuedMoviesLength);
     // if (pickedMoviesLength === 0) {
     //   movies = [];
     // }
@@ -396,9 +396,9 @@ function takeItem() {
     // allMovies = pickedMovies;
     initializePage();
     console.log(
-      'You movies saved in watched are:',
+      'I found more movies in the watched movies list: ',
       watchedList,
-      'and queued are: ',
+      'and in the queued movies list: ',
       queueList
     );
   } catch (error) {
