@@ -235,7 +235,7 @@ function watchedBtnClick2() {
     //   const moviePlaced = queueList.findIndex(movie => movie.id === m.id);
     //   queueList[moviePlaced].watched = false;
     // }
-    //update both lists if the film is in both lists
+    //delete from the queued list if the movie is in both lists
     queueList.forEach(movieQueued => {
       if (movieQueued.queued === true && movieQueued.watched === true) {
         movieQueued.watched = false;
@@ -298,7 +298,7 @@ function queueBtnClick2() {
     //   const moviePlaced = queueList.findIndex(movie => movie.id === m.id);
     //   queueList[moviePlaced].queued = false;
     // }
-    //update both lists if the film is in both lists
+    //delete from the watched list if the movie is in both lists
     watchedList.forEach(movieWatched => {
       if (movieWatched.queued === true && movieWatched.watched === true) {
         movieWatched.queued = false;

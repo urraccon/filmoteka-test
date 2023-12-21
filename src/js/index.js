@@ -194,7 +194,7 @@ function queueBtnClick() {
     queueBtn.innerHTML = 'Remove from queue';
   }
   // saveMovieList(QUEUE_KEY, queueList);
-  //update both lists if the film is in both lists
+  //update both lists in case it was saved in both
   watchedList.forEach(movieWatched => {
     queueList.forEach(movieQueued => {
       if (movieWatched.id === movieQueued.id) {
